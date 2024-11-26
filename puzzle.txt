@@ -1,0 +1,23 @@
+def generate_combinations(group1, group2, group3):
+    combinations = []
+    for num1 in group1:
+        for num2 in group2:
+            for num3 in group3:
+                if len(set([num1, num2, num3])) == 3:  # Check for unique integers
+                    combinations.append((num1, num2, num3))
+    return combinations
+
+# Define the groups
+group1 = [125, 216, 512, 729]
+group2 = [163, 193, 349, 367, 463, 487, 541, 613, 619, 631, 643, 673, 739, 769, 823, 937]
+group3 = [139, 167, 176, 193, 236, 319, 365, 367, 376, 379, 386, 391, 397, 469, 478, 487, 496, 536, 563, 617, 635, 637, 638, 649, 653, 671, 673, 683, 694, 716, 736, 739, 748, 761, 763, 784, 793, 836, 847, 863, 874, 913, 931, 937, 946, 964, 973]
+
+# Generate the combinations
+combinations = generate_combinations(group1, group2, group3)
+
+# Print the number of combinations
+print(len(combinations))
+
+# To print all combinations (if desired):
+# for combo in combinations:
+#     print(combo)
